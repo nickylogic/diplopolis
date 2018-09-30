@@ -2,9 +2,9 @@
   "name": "diplopolis",
   "version": "1.0.0",
   "description": "Diplomatic City-State Game",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
