@@ -1,25 +1,16 @@
 const express = require('express')
-const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000
 
 module.paths.push(__dirname + '/api')
 module.paths.push(__dirname + '/lib')
-
-// serve index.html at base URL, with CORS enabled for Okta signon
-var corsOptions = {
-    origin: 'https://dev-577009.oktapreview.com',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-app.options('/', cors(corsOptions))
-app.get('/', cors(corsOptions), (req, res) => res.sendFile(__dirname + '/web/index.html'))
-
+ 
 // serve index.html at root, route all other URLs to static content under 'web'
+app.get('/', (req, res) => res.sendFile(__dirname + '/web/index.html'))
 app.use('/web', express.static('web'))
-app.use('/js', express.static('web/js'))
-app.use('/lib/js', express.static('web/lib/js'))
+app.use('/app', express.static('web/app'))
+app.use('/lib', express.static('web/lib'))
 app.use('/css', express.static('web/css'))
-app.use('/lib/css', express.static('web/lib/css'))
 app.use('/img', express.static('web/img'))
 
 const auth = require('auth')
