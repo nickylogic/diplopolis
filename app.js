@@ -17,7 +17,9 @@ app.get('/', cors(corsOptions), (req, res) => res.sendFile(__dirname + '/web/ind
 // serve index.html at root, route all other URLs to static content under 'web'
 app.use('/web', express.static('web'))
 app.use('/js', express.static('web/js'))
+app.use('/lib/js', express.static('web/js'))
 app.use('/css', express.static('web/css'))
+app.use('/lib/css', express.static('web/css'))
 app.use('/img', express.static('web/img'))
 
 const auth = require('auth')

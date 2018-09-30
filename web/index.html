@@ -3,22 +3,13 @@
 
 <HEAD>
     <TITLE>Diplopolis</TITLE>
-    <!-- Okta signin -->
-    <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/js/okta-sign-in.min.js" type="text/javascript"></script>
-    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/css/okta-sign-in.min.css" type="text/css" rel="stylesheet" />
-    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/css/okta-theme.css" type="text/css" rel="stylesheet"/>
-    <script src="js/okta-signin.js" type="text/javascript"></script>
-    <script>
-        oktaSignIn({
-            baseUrl: 'https://dev-577009.oktapreview.com',
-            clientId: '0oagcuaqv6WBNI4P80h7'
-        })
-    </script>
+    <script src="lib/js/auth0.min.js"></script>
+    <script src="lib/app.js"></script>
 </HEAD>
 
 <BODY>
     <H1>Welcome to Diplopolis</H1>
-    <div id="okta-login-container"></div>
+    <button id="btn-login">Log In</button>
 </BODY>
 
 </HTML>
