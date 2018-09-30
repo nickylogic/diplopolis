@@ -4,9 +4,6 @@ var lock = new Auth0Lock(
   'Yd4eeGk7wo5mgn1loI1Xxqq7iqjQ6mUy',
   'diplopolis.auth0.com'
 );
-
-document.getElementById("btn-login").style.visibility = "visible";
-document.getElementById("btn-logout").style.visibility = "hidden";
   
 // Listening for the authenticated event
 lock.on("authenticated", function(authResult) {
